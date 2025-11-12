@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Желбуаз</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background: #f9fafb;
+      margin: 0;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      color: #222;
+      margin-bottom: 10px;
+    }
+
+    p {
+      max-width: 650px;
+      margin: 0 auto 20px;
+      color: #444;
+      line-height: 1.6;
+      font-size: 18px;
+    }
+
+    img {
+      width: 80%;
+      max-width: 400px;
+      border-radius: 12px;
+      margin-top: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
+
+    button {
+      background: #e75480;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      margin-top: 20px;
+      transition: background 0.3s ease;
+    }
+
+    button:hover {
+      background: #d6336c;
+    }
+
+    .pink-bullets {
+      list-style: none;
+      padding: 0;
+      max-width: 720px;
+      margin: 20px auto;
+      text-align: left;
+    }
+    .pink-bullets li {
+      position: relative;
+      padding-left: 36px;
+      margin: 12px 0;
+      line-height: 1.5;
+      color: #333;
+      background: #fff;
+      border-radius: 10px;
+      padding: 12px 16px 12px 36px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+    }
+    .pink-bullets li::before {
+      content: "";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #ff66b3;
+      box-shadow: 0 0 0 4px rgba(255,102,179,0.12);
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Желбуаз</h1>
+
+  <p>
+    <strong>Желбуаз</strong> – қазақ халқының ұлттық үрмелі аспаптарының бірі. 
+    Ол өзінің ерекше құрылымымен және терең, қоңыр үнімен ерекшеленеді. 
+    Желбуаз негізінен салтанатты шараларда, мерекелерде және жыр-термелерді орындауда қолданылған. 
+    Аспап табиғаттың дыбыстарын елестететін әуенімен ерекше танымал.
+  </p>
+
+  <h2>Желбуаздың құрылымы</h2>
+  <ul class="pink-bullets">
+    <li><strong>Қапшығы:</strong> Желбуаздың негізгі бөлігі – теріден жасалған үлкен қапшық. Әдетте қапшыққа қойдың немесе ешкінің терісі қолданылады. Ол ауа жинауға және дыбыс резонаторы ретінде қызмет етеді.</li>
+    <li><strong>Үрлемесі:</strong> Аспаптың ауызбен үрлейтін түтігі. Ол арқылы қапшыққа ауа жіберіледі.</li>
+    <li><strong>Әуездік түтіктер:</strong> Желбуазда дыбыс шығаратын бірнеше түтік болады. Олар ағаштан немесе сүйектен жасалады.</li>
+    <li><strong>Материалы:</strong> Желбуаз жасау үшін табиғи материалдар – тері, ағаш, сүйек және кейде металл қолданылады.</li>
+  </ul>
+
+  <!-- Фото -->
+  <img src="jelbuaz1.webp" alt="Желбуаз суреті">
+
+  <!-- ҮНІ батырмасы -->
+  <div>
+    <button id="playButton" onclick="toggleJelbuaz()">▶ ҮНІ</button>
+  </div>
+
+  <!-- Аудио -->
+  <audio id="jelbuazSound" src="jelbuaz (mp3cut.net).mp3"></audio>
+
+  <script>
+    const sound = document.getElementById('jelbuazSound');
+    const button = document.getElementById('playButton');
+
+    function toggleJelbuaz() {
+      if (sound.paused) {
+        sound.play();
+        button.textContent = '⏸ Пауза';
+      } else {
+        sound.pause();
+        button.textContent = '▶ ҮНІ';
+      }
+    }
+
+    sound.addEventListener('ended', () => {
+      button.textContent = '▶ ҮНІ';
+    });
+  </script>
+
+</body>
+</html>
